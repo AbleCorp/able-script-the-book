@@ -1,28 +1,15 @@
 # AbleScript
 [AbleScript](00-title-page.md)
-
-## Concepts
 - [Concepts](./01-concepts.md)
-## Getting started
 - [Getting started](./02-getting_started/00-index.md)
     - [Installation](./02-getting_started/01-installation.md)
     - [Hello, world!](./02-getting_started/02-hello_world.md)
-
-## Basics
 - [Basics](./03-basics/00-index.md)
     - [Variables](./03-basics/01-variables.md)
     - [Functios](./03-basics/02-functios.md)
     - [Control flow](./03-basics/03-control_flow.md)
     - [Expressions vs Statements](./03-basics/04-exprs-vs-stmts.md)
-
-## BF functios
 - [BF functios](04-bf-functios.md)
-
-## The Tragedy of T-Dark
 - [The Tragedy of T-Dark](05-tdark.md)
-
-## Keywords
 - [Keywords](06-keywords.md)
-
-## AbleScript on Web
 - [AbleScript on Web]()
