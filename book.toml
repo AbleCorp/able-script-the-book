@@ -1,0 +1,6 @@
+[book]
+authors = ["ondra05"]
+language = "en"
+multilingual = false
+src = "src"
+title = "AbleScript"
