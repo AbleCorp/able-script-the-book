@@ -10,6 +10,7 @@
 
 ## Basics
 - [Basics](./03-basics/00-index.md)
-    - [Variables]()
-    - [Functios]()
-    - [Control flow]()
+    - [Variables](./03-basics/01-variables.md)
+    - [Data types](./03-basics/02-types.md)
+    - [Functios](./03-basics/03-functios.md)
+    - [Control flow](./03-basics/04-control_flow.md)
