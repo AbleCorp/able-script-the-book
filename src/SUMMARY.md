@@ -2,9 +2,14 @@
 [AbleScript](title-page.md)
 
 ## Concepts
-- [Concepts](./ch01-00-concepts.md)
+- [Concepts](./01-concepts.md)
 ## Getting started
-- [Getting started](./ch02-00-getting-started.md)
-    - [Installation](./ch02-01-installation.md)
-    - [REPL](./ch02-02-repl.md)
+- [Getting started](./02-getting_started/00-index.md)
+    - [Installation](./02-getting_started/01-installation.md)
     - [Hello, world!]()
+
+## Basics
+- [Basics](./03-basics/00-index.md)
+    - [Variables]()
+    - [Functios]()
+    - [Control flow]()
