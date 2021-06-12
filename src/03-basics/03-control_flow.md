@@ -30,7 +30,7 @@ Loops repeates block of code over and over again forewer until it isn't explicit
 For example,
 ```ablescript
 loop {
-    "Buy Able products! print;
+    "Buy Able products!" print;
 }
 ```
 will infinitely repeat this piece of code.
