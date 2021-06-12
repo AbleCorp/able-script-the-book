@@ -41,6 +41,7 @@ var counter = 0;
 loop {
     if (counter == 10) { break; }
     "Buy Able products!" print;
+    counter = counter + 1;
 }
 ```
 This example will stop executing the loop after 10 times writing "Buy Able products!" on screen.
