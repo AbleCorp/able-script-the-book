@@ -14,3 +14,4 @@
     - [Data types](./03-basics/02-types.md)
     - [Functios](./03-basics/03-functios.md)
     - [Control flow](./03-basics/04-control_flow.md)
+    - [Expressions vs Statements](./03-basics/05-exprs-vs-stmts.md)

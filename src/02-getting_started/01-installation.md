@@ -2,10 +2,10 @@
 To use AbleScript, you need to download and compile it first. AbleCorp do not provide any binaries, so you have to clone the repository and build it.
 
 ### Install Rust Toolchain
-First of all, if you didn't do it previously, you have to install Rust toolchain. That can be done using [Rustup](https://rustup.rs).
+First of all, you have to have Rust toolchain. It can be installed using [Rustup](https://rustup.rs).
 
 ### Build AbleScript
-First of all we need to get AbleScript sources and then build it:
+First of all we need to get AbleScript sources and build it:
 ```console
 $ git clone https://github.com/AbleCorp/able-script
 $ cd able-script

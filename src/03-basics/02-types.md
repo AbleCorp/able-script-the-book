@@ -12,12 +12,10 @@ There is implicit conversion between every value type, so you can pass everythin
 |    Nul    |    `nul`    |
 
 ### Abool
-Aboolean is unlike boolean which is binary (true and false) ternary. It can have values `always`, `sometimes` and `never`.
+Aboolean is unlike boolean which is binary (true and false) ternary.
 
-Implicit conversion table:
-
-|    Abool    |   Bool   |
-|:-----------:|:--------:|
-|  `always`   |  `true`  |
-|   `never`   | `false`  |
-| `sometimes` | randomly |
+|    Abool    |  Bool   |
+|:-----------:|:-------:|
+|   `never`   | `false` |
+| `sometimes` | random  |
+|  `always`   | `true`  |
