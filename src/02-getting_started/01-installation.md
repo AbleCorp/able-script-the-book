@@ -12,3 +12,15 @@ $ cd able-script
 $ cargo build --release
 ```
 The binary will be located in `target/release/` directory. You can also use `cargo run --release` to build and run it directly.
+
+### Interactive
+When is AbleScript run without arguments, you can interactively execute code:
+```console
+$ able-script
+Hi [AbleScript 0.1.0] - AST Printer & Interpreter
+:: 
+```
+
+> Currently, AbleScript prints AST before code execution
+
+For exiting, type `exit`

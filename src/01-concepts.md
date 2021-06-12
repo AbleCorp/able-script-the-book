@@ -10,6 +10,6 @@ AbleScript is designed to be bad.
 
 ## Influences
 - JavaScript: Typesystem
-- FORTRAN: Syntactic item types
+- FORTRAN: [Expr / Statement differences](03-basics/04-exprs-vs-stmts.md)
 
 [^1]: Because float is bloat

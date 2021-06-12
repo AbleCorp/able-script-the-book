@@ -64,7 +64,7 @@ Output:
 ```
 
 ### Rlyeh
-`rlyeh` keyword exits program with some random exit code.
+`rlyeh` keyword crashes program with some random exit code.
 ```ablescript
 "hello" print;
 rlyeh;

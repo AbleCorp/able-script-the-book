@@ -3,7 +3,7 @@ AbleScript variables can be defined using `var` keyword:
 ```ablescript
 var variable;
 ```
-This will create an uninitialised variable, so it' value will be `nul`.
+This will create an uninitialised variable, so it's value will be `nul`.
 
 For assigning value to variable, you can use:
 ```ablescript
