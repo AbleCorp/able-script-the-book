@@ -1,5 +1,5 @@
 # AbleScript
-[AbleScript](title-page.md)
+[AbleScript](00-title-page.md)
 
 ## Concepts
 - [Concepts](./01-concepts.md)
