@@ -1,5 +1,5 @@
 # Concepts
-AbleScript is designed to be bad.
+AbleScript is procedural, cursed, dynamically-typed, interpreted programming language, designed to be bad.
 
 ## Key Features
 - BF functions
@@ -9,6 +9,7 @@ AbleScript is designed to be bad.
 - Various selection of constants (including random numbers)
 
 ## Influences
+- C-language family: Syntax
 - JavaScript: Typesystem
 - FORTRAN: [Expr / Statement differences](03-basics/04-exprs-vs-stmts.md)
 
