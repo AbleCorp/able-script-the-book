@@ -3,7 +3,7 @@ To decide whatever code should be runned and run code repeatedly is basic block 
 
 ### If statements
 If statement decide if code should be runned or not by a condition.
-```
+```ablescript
 var num = 7;
 
 if (num == 7) {
