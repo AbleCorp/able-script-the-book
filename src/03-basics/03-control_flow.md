@@ -35,7 +35,7 @@ loop {
 ```
 will infinitely repeat this piece of code.
 
-So, for stopping the loop, there exist `break` beyword.
+So, for stopping the loop, there exist `break` keyword.
 ```ablescript
 var counter = 0;
 loop {
