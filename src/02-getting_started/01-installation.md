@@ -21,6 +21,4 @@ Hi [AbleScript 0.1.0] - AST Printer & Interpreter
 :: 
 ```
 
-> Currently, AbleScript prints AST before code execution
-
 For exiting, type `exit`
