@@ -7,6 +7,7 @@
 - `loop` - infinite [loop](./03-basics/03-control_flow.md)
 - `melo` - Ban a variable
 - `print` - Print preceding expression to stdout
+- `rickroll` - [Link](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 - `rlyeh` - Crash with random error code
 - `T-Dark` - T-Dark block
 - `var` - Declaration of [variable](./03-basics/01-variables.md)
