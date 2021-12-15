@@ -15,12 +15,8 @@ Comments in AbleScript starts with `owo` and spans to end of the line
 "hello" print; owo This will print "hello"
 ```
 
-## Operations
-- Math: `+`, `-`, `*`, `/`
-- Bool
-    - And: `&`
-    - Or: `|`
-    - Not: `!`, `aint`
+## Operators
+- Common: `+`, `-`, `*`, `/`, `aint` (or `!`)
 - Comparsion: `<`, `==`, `!=` `>`
 - Expressions can be enclosed in parantheses
 - Negative numbers are represented as `0 - n`
