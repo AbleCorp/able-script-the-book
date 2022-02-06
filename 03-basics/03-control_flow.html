@@ -179,10 +179,10 @@ loop {
 <p>For jumping back to start of the block in the loop, there is keyword <code>hopback</code> (equivalent to <code>continue</code> in other languages.)</p>
 <pre><code class="language-ablescript">var counter = 0;
 loop {
-    if (counter == 3) { hopback; }
-    if (counter == 5) { break; }
     counter print;
     counter = counter + 1;
+    if (counter == 3) { hopback; }
+    if (counter == 5) { break; }
 }
 </code></pre>
 <p>Output:</p>
