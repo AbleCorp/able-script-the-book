@@ -48,12 +48,12 @@ This example will stop executing the loop after 10 times writing "Buy Able produ
 
 For jumping back to start of the block in the loop, there is keyword `hopback` (equivalent to `continue` in other languages.)
 ```ablescript
-var counter = 0;
+var counter = -1;
 loop {
-    counter print;
     counter = counter + 1;
     if (counter == 3) { hopback; }
     if (counter == 5) { break; }
+    counter print;
 }
 ```
 Output:
