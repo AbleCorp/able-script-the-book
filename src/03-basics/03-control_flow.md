@@ -50,10 +50,10 @@ For jumping back to start of the block in the loop, there is keyword `hopback` (
 ```ablescript
 var counter = 0;
 loop {
-    if (counter == 3) { hopback; }
-    if (counter == 5) { break; }
     counter print;
     counter = counter + 1;
+    if (counter == 3) { hopback; }
+    if (counter == 5) { break; }
 }
 ```
 Output:
