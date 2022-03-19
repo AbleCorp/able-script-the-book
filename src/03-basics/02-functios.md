@@ -24,10 +24,10 @@ num + "print"();
 ```
 
 ### Functio chains
-Using `+` and `*` operators, functions in AbleScript can be "chained"
+Using `+` and `*` operators, functios in AbleScript can be "chained"
 
 #### Chain kinds
-- `+`: Equal - all arguments for chain are equally devided between left and right hand-side functions
+- `+`: Equal - all arguments for chain are equally devided between left and right hand-side functios
 - `*`: By arity - all arguments are distributed for every functio in chain by its arity
 
 
