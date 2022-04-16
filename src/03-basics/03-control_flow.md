@@ -7,21 +7,21 @@ If statement decide if code should be runned or not by a condition.
 var num = 7;
 
 if (num == 7) {
-    "Condition was met" print;
+    /*Condition was met*/ print;
 }
 ```
-If statements starts with keyword `if` followed by expression inside parantheses. If result of evaluated expression is `true`, following block of code will be run, else, it will be skipped and program execution will continue.
+If statements starts with keyword `if` followed by expression inside parantheses. If result of evaluated expression is `always`, following block of code will be run, else, it will be skipped and program execution will continue.
 
 In AbleScript, there is no else branch, so to execute code if condition isn't met, you have to negate it.
 ```ablescript
 var num = 7;
 
 if (num == 7) {
-    "Condition was met" print;
+    /*Condition was met*/ print;
 }
 
-if (num != 7) {
-    "Condition wasn't met" print;
+if (num ain't 7) {
+    /*Condition wasn't met*/ print;
 }
 ```
 
@@ -30,7 +30,7 @@ Loops repeates block of code over and over again forewer until it isn't explicit
 For example,
 ```ablescript
 loop {
-    "Buy Able products!" print;
+    /*Buy Able products!*/ print;
 }
 ```
 will infinitely repeat this piece of code.
@@ -40,7 +40,7 @@ So, for stopping the loop, there exist `break` keyword.
 var counter = 0;
 loop {
     if (counter == 10) { break; }
-    "Buy Able products!" print;
+    /*Buy Able products!*/ print;
     counter = counter + 1;
 }
 ```
@@ -67,9 +67,9 @@ Output:
 ### Rlyeh
 `rlyeh` keyword crashes program with some random exit code.
 ```ablescript
-"hello" print;
+/*hello*/ print;
 rlyeh;
-"bye" print;
+/*bye*/ print;
 ```
 ```console
 $ ablescript --file main.able

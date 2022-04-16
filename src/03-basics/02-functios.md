@@ -2,7 +2,7 @@
 Functios in AbleScript can be defined using `functio` keyword, identifier, parentheses (that can optionally contain arguments) and functio body.
 ```ablescript
 functio sayhello() {
-    "hello!" print;
+    /*hello!*/ print;
 }
 ```
 
@@ -20,7 +20,7 @@ sum(3, 9, return);
 If you want to evaluate a value of code, simply call it:
 ```ablescript
 var num = 4 + 2;
-num + "print"();
+num + /*print*/();
 ```
 
 ### Functio chains
@@ -37,11 +37,11 @@ functio printsum(num1, num2) {
 }
 
 functio hello(name) {
-    "Hello, " + name + "!"print;
+    /*Hello, */ + name + /*!*print;
 }
 
 var sumhello = printsum * hello;
-sumhello(3, 4, "Able");
+sumhello(3, 4, /*Able*/);
 ```
 
 Output:

@@ -12,7 +12,7 @@ and then open `main.able` with your editor of choice.
 
 Hello World program in AbleScript looks like this:
 ```ablescript
-"Hello, world!" print;
+/*Hello, world!*/ print;
 ```
 
 Then, execute your program with AbleScript
