@@ -144,26 +144,26 @@
 <pre><code class="language-ablescript">var num = 7;
 
 if (num == 7) {
-    &quot;Condition was met&quot; print;
+    /*Condition was met*/ print;
 }
 </code></pre>
-<p>If statements starts with keyword <code>if</code> followed by expression inside parantheses. If result of evaluated expression is <code>true</code>, following block of code will be run, else, it will be skipped and program execution will continue.</p>
+<p>If statements starts with keyword <code>if</code> followed by expression inside parantheses. If result of evaluated expression is <code>always</code>, following block of code will be run, else, it will be skipped and program execution will continue.</p>
 <p>In AbleScript, there is no else branch, so to execute code if condition isn't met, you have to negate it.</p>
 <pre><code class="language-ablescript">var num = 7;
 
 if (num == 7) {
-    &quot;Condition was met&quot; print;
+    /*Condition was met*/ print;
 }
 
-if (num != 7) {
-    &quot;Condition wasn't met&quot; print;
+if (num ain't 7) {
+    /*Condition wasn't met*/ print;
 }
 </code></pre>
 <h3 id="loop"><a class="header" href="#loop">Loop</a></h3>
 <p>Loops repeates block of code over and over again forewer until it isn't explicitly told to stop.
 For example,</p>
 <pre><code class="language-ablescript">loop {
-    &quot;Buy Able products!&quot; print;
+    /*Buy Able products!*/ print;
 }
 </code></pre>
 <p>will infinitely repeat this piece of code.</p>
@@ -171,7 +171,7 @@ For example,</p>
 <pre><code class="language-ablescript">var counter = 0;
 loop {
     if (counter == 10) { break; }
-    &quot;Buy Able products!&quot; print;
+    /*Buy Able products!*/ print;
     counter = counter + 1;
 }
 </code></pre>
@@ -193,9 +193,9 @@ loop {
 </code></pre>
 <h3 id="rlyeh"><a class="header" href="#rlyeh">Rlyeh</a></h3>
 <p><code>rlyeh</code> keyword crashes program with some random exit code.</p>
-<pre><code class="language-ablescript">&quot;hello&quot; print;
+<pre><code class="language-ablescript">/*hello*/ print;
 rlyeh;
-&quot;bye&quot; print;
+/*bye*/ print;
 </code></pre>
 <pre><code class="language-console">$ ablescript --file main.able
 hello

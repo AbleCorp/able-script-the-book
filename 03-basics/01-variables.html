@@ -149,11 +149,11 @@
 <pre><code class="language-ablescript">var variable = 42;
 </code></pre>
 <h3 id="constants"><a class="header" href="#constants">Constants</a></h3>
-<p>Constants cannot be user defined, they are internally defined inside AbleScript interpreter (see <code>src/consts.rs</code>)</p>
+<p>Constants cannot be user defined, they are internally defined inside AbleScript interpreter (see <a href="https://git.ablecorp.us/AbleScript/able-script/src/branch/master/ablescript/src/consts.rs"><code>ablescript/src/consts.rs</code></a>)</p>
 <h3 id="banning"><a class="header" href="#banning">Banning</a></h3>
 <p>AbleScript has bannable variables, what means when variable is banned, it cannot be used and it's usage resolves into runtime error.</p>
 <p>Ban keyword was named after Rust Language Community Discord Server's owner <code>MelodicStream#1336</code> nicknamed Melo:</p>
-<pre><code class="language-ablescript">var variable = &quot;Hello, world!&quot;;
+<pre><code class="language-ablescript">var variable = /*Hello, world!*/;
 melo variable;
 variable print; owo Runtime Error
 </code></pre>

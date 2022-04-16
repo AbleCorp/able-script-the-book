@@ -140,7 +140,7 @@
                         <h2 id="functios"><a class="header" href="#functios">Functios</a></h2>
 <p>Functios in AbleScript can be defined using <code>functio</code> keyword, identifier, parentheses (that can optionally contain arguments) and functio body.</p>
 <pre><code class="language-ablescript">functio sayhello() {
-    &quot;hello!&quot; print;
+    /*hello!*/ print;
 }
 </code></pre>
 <p>Functio calls are statements, so they do not return any value. Luckily, all arguments are passed by reference, so you save return value by mutating them.</p>
@@ -154,7 +154,7 @@ sum(3, 9, return);
 <h3 id="eval"><a class="header" href="#eval">Eval</a></h3>
 <p>If you want to evaluate a value of code, simply call it:</p>
 <pre><code class="language-ablescript">var num = 4 + 2;
-num + &quot;print&quot;();
+num + /*print*/();
 </code></pre>
 <h3 id="functio-chains"><a class="header" href="#functio-chains">Functio chains</a></h3>
 <p>Using <code>+</code> and <code>*</code> operators, functions in AbleScript can be &quot;chained&quot;</p>
@@ -168,11 +168,11 @@ num + &quot;print&quot;();
 }
 
 functio hello(name) {
-    &quot;Hello, &quot; + name + &quot;!&quot;print;
+    /*Hello, */ + name + /*!*print;
 }
 
 var sumhello = printsum * hello;
-sumhello(3, 4, &quot;Able&quot;);
+sumhello(3, 4, /*Able*/);
 </code></pre>
 <p>Output:</p>
 <pre><code>7

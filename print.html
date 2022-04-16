@@ -171,8 +171,8 @@
 <pre><code class="language-console">$ sha256sum --check sha256sums
 </code></pre>
 <p>or by just computing and then comparing it manually</p>
-<pre><code class="language-console">$ sha256sum ablescript-0.2.0-x86_64-unknown-linux-musl
-e2f9251b18344d60e7ac3cfc6695c6ccbdb44c1e9f8dfa6c8b6bbf58cc67f28e  ablescript-0.2.0-x86_64-unknown-linux-musl
+<pre><code class="language-console">$ sha256sum ablescript-0.3.0-x86_64-unknown-linux-musl
+a195b1ff87a02e3669e5ace7a4f03862ac70915b8d47373ad4f6e906db4751c4  ablescript-0.3.0-x86_64-unknown-linux-musl
 </code></pre>
 <h3 id="build"><a class="header" href="#build">Build</a></h3>
 <h4 id="install-rust-toolchain"><a class="header" href="#install-rust-toolchain">Install Rust Toolchain</a></h4>
@@ -187,7 +187,7 @@ $ cargo build --release
 <h3 id="interactive"><a class="header" href="#interactive">Interactive</a></h3>
 <p>When is AbleScript run without arguments, you can interactively execute code:</p>
 <pre><code class="language-console">$ able-script
-Hi [AbleScript 0.2.0]
+Hi [AbleScript 0.3.0]
 :: 
 </code></pre>
 <p>For exiting, type <code>exit</code></p>
@@ -200,7 +200,7 @@ $ touch main.able
 </code></pre>
 <p>and then open <code>main.able</code> with your editor of choice.</p>
 <p>Hello World program in AbleScript looks like this:</p>
-<pre><code class="language-ablescript">&quot;Hello, world!&quot; print;
+<pre><code class="language-ablescript">/*Hello, world!*/ print;
 </code></pre>
 <p>Then, execute your program with AbleScript</p>
 <pre><code class="language-console">$ able-script --file main.able
@@ -209,18 +209,17 @@ $ touch main.able
 <p>This chapter describes basic syntax of AbleScript</p>
 <h2 id="print-keyword"><a class="header" href="#print-keyword">Print keyword</a></h2>
 <p><code>print</code> keyword prints preceding expression on stdout.</p>
-<pre><code class="language-ablescript">&quot;check out other able products&quot; print;
+<pre><code class="language-ablescript">/*check out other able products*/ print;
 </code></pre>
 <h2 id="comments"><a class="header" href="#comments">Comments</a></h2>
 <p>Comments in AbleScript starts with <code>owo</code> and spans to end of the line</p>
-<pre><code class="language-ablescript">&quot;hello&quot; print; owo This will print &quot;hello&quot;
+<pre><code class="language-ablescript">/*hello*/ print; owo This will print &quot;hello&quot;
 </code></pre>
 <h2 id="operators"><a class="header" href="#operators">Operators</a></h2>
 <ul>
-<li>Common: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>aint</code> (or <code>!</code>)</li>
-<li>Comparsion: <code>&lt;</code>, <code>==</code>, <code>!=</code> <code>&gt;</code></li>
+<li>Common: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>ain't</code></li>
+<li>Comparsion: <code>&lt;</code>, <code>==</code>, <code>ain't</code> <code>&gt;</code></li>
 <li>Expressions can be enclosed in parantheses</li>
-<li>Negative numbers are represented as <code>0 - n</code></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="variables"><a class="header" href="#variables">Variables</a></h2>
 <p>AbleScript variables can be defined using <code>var</code> keyword:</p>
@@ -234,18 +233,18 @@ $ touch main.able
 <pre><code class="language-ablescript">var variable = 42;
 </code></pre>
 <h3 id="constants"><a class="header" href="#constants">Constants</a></h3>
-<p>Constants cannot be user defined, they are internally defined inside AbleScript interpreter (see <code>src/consts.rs</code>)</p>
+<p>Constants cannot be user defined, they are internally defined inside AbleScript interpreter (see <a href="https://git.ablecorp.us/AbleScript/able-script/src/branch/master/ablescript/src/consts.rs"><code>ablescript/src/consts.rs</code></a>)</p>
 <h3 id="banning"><a class="header" href="#banning">Banning</a></h3>
 <p>AbleScript has bannable variables, what means when variable is banned, it cannot be used and it's usage resolves into runtime error.</p>
 <p>Ban keyword was named after Rust Language Community Discord Server's owner <code>MelodicStream#1336</code> nicknamed Melo:</p>
-<pre><code class="language-ablescript">var variable = &quot;Hello, world!&quot;;
+<pre><code class="language-ablescript">var variable = /*Hello, world!*/;
 melo variable;
 variable print; owo Runtime Error
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="functios"><a class="header" href="#functios">Functios</a></h2>
 <p>Functios in AbleScript can be defined using <code>functio</code> keyword, identifier, parentheses (that can optionally contain arguments) and functio body.</p>
 <pre><code class="language-ablescript">functio sayhello() {
-    &quot;hello!&quot; print;
+    /*hello!*/ print;
 }
 </code></pre>
 <p>Functio calls are statements, so they do not return any value. Luckily, all arguments are passed by reference, so you save return value by mutating them.</p>
@@ -259,7 +258,7 @@ sum(3, 9, return);
 <h3 id="eval"><a class="header" href="#eval">Eval</a></h3>
 <p>If you want to evaluate a value of code, simply call it:</p>
 <pre><code class="language-ablescript">var num = 4 + 2;
-num + &quot;print&quot;();
+num + /*print*/();
 </code></pre>
 <h3 id="functio-chains"><a class="header" href="#functio-chains">Functio chains</a></h3>
 <p>Using <code>+</code> and <code>*</code> operators, functions in AbleScript can be &quot;chained&quot;</p>
@@ -273,11 +272,11 @@ num + &quot;print&quot;();
 }
 
 functio hello(name) {
-    &quot;Hello, &quot; + name + &quot;!&quot;print;
+    /*Hello, */ + name + /*!*print;
 }
 
 var sumhello = printsum * hello;
-sumhello(3, 4, &quot;Able&quot;);
+sumhello(3, 4, /*Able*/);
 </code></pre>
 <p>Output:</p>
 <pre><code>7
@@ -290,26 +289,26 @@ Hello, Able!
 <pre><code class="language-ablescript">var num = 7;
 
 if (num == 7) {
-    &quot;Condition was met&quot; print;
+    /*Condition was met*/ print;
 }
 </code></pre>
-<p>If statements starts with keyword <code>if</code> followed by expression inside parantheses. If result of evaluated expression is <code>true</code>, following block of code will be run, else, it will be skipped and program execution will continue.</p>
+<p>If statements starts with keyword <code>if</code> followed by expression inside parantheses. If result of evaluated expression is <code>always</code>, following block of code will be run, else, it will be skipped and program execution will continue.</p>
 <p>In AbleScript, there is no else branch, so to execute code if condition isn't met, you have to negate it.</p>
 <pre><code class="language-ablescript">var num = 7;
 
 if (num == 7) {
-    &quot;Condition was met&quot; print;
+    /*Condition was met*/ print;
 }
 
-if (num != 7) {
-    &quot;Condition wasn't met&quot; print;
+if (num ain't 7) {
+    /*Condition wasn't met*/ print;
 }
 </code></pre>
 <h3 id="loop"><a class="header" href="#loop">Loop</a></h3>
 <p>Loops repeates block of code over and over again forewer until it isn't explicitly told to stop.
 For example,</p>
 <pre><code class="language-ablescript">loop {
-    &quot;Buy Able products!&quot; print;
+    /*Buy Able products!*/ print;
 }
 </code></pre>
 <p>will infinitely repeat this piece of code.</p>
@@ -317,7 +316,7 @@ For example,</p>
 <pre><code class="language-ablescript">var counter = 0;
 loop {
     if (counter == 10) { break; }
-    &quot;Buy Able products!&quot; print;
+    /*Buy Able products!*/ print;
     counter = counter + 1;
 }
 </code></pre>
@@ -339,9 +338,9 @@ loop {
 </code></pre>
 <h3 id="rlyeh"><a class="header" href="#rlyeh">Rlyeh</a></h3>
 <p><code>rlyeh</code> keyword crashes program with some random exit code.</p>
-<pre><code class="language-ablescript">&quot;hello&quot; print;
+<pre><code class="language-ablescript">/*hello*/ print;
 rlyeh;
-&quot;bye&quot; print;
+/*bye*/ print;
 </code></pre>
 <pre><code class="language-console">$ ablescript --file main.able
 hello
@@ -361,14 +360,14 @@ $ echo $?
 <div style="break-before: page; page-break-before: always;"></div><h1 id="carts"><a class="header" href="#carts">Carts</a></h1>
 <p>Carts are the only collections in AbleScript which stores key - value mappings. They are defined by typing comma-separated <code>value &lt;= key</code> associations into square brackets.</p>
 <pre><code class="language-ablescript">var cart = [
-    &quot;Buy Able products&quot; &lt;= &quot;What to do?&quot;,
-    6 * 9 &lt;= &quot;answ&quot; + &quot;er&quot;,
-    &quot;able&quot; &lt;= true
+    /*Buy Able products*/ &lt;= /*What to do?*/,
+    6 * 9 &lt;= /*answ*/ + /*er*/,
+    /*able*/ &lt;= true
 ];
 </code></pre>
 <p>To access or change values, put square square brackets behind the cart with the key.</p>
-<pre><code class="language-ablescript">cart[true] = &quot;Able&quot;;
-cart[&quot;What to do&quot; + &quot;?&quot;] print;
+<pre><code class="language-ablescript">cart[true] = /*Able*/;
+cart[/*What to do*/ + /*?*/] print;
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bf-functios"><a class="header" href="#bf-functios">BF functios</a></h1>
 <p>One of AbleScript's core functions is running BF code. Simple BF functio can be declarated using <code>bff</code> keyword:</p>
@@ -389,7 +388,7 @@ cart[&quot;What to do&quot; + &quot;?&quot;] print;
 <p>Have you heard the Tragedy of T-Dark the Holy War Starter? He mixed up AbleLang and AbleScript and was executed for his sins.</p>
 <p>For those cases, we are introducting you <em>- dramatic pause -</em> The T-Dark Block. Simply, it replaces any occurance of substring <code>lang</code> with <code>script</code> in string literals and identifiers.</p>
 <pre><code class="language-ablescript">T-Dark {
-    var lang = &quot;buy able products&quot;;
+    var lang = /*buy able products*/;
     script print;
 }
 </code></pre>
