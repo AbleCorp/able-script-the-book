@@ -139,14 +139,14 @@
                     <main>
                         <h1 id="carts"><a class="header" href="#carts">Carts</a></h1>
 <p>Carts are the only collections in AbleScript which stores key - value mappings. They are defined by typing comma-separated <code>value &lt;= key</code> associations into square brackets.</p>
-<pre><code class="language-ablescript">var cart = [
-    /*Buy Able products*/ &lt;= /*What to do?*/,
-    6 * 9 &lt;= /*answ*/ + /*er*/,
-    /*able*/ &lt;= true
+<pre><code class="language-ablescript">dim cart [
+   /*Buy Able products*/ &lt;= /*What to do?*/,
+   6 * 9 &lt;= /*answ*/ + /*er*/,
+   /*able*/ &lt;= true
 ];
 </code></pre>
 <p>To access or change values, put square square brackets behind the cart with the key.</p>
-<pre><code class="language-ablescript">cart[true] = /*Able*/;
+<pre><code class="language-ablescript">/*Able*/ =: cart[true];
 cart[/*What to do*/ + /*?*/] print;
 </code></pre>
 

@@ -141,7 +141,7 @@
 <p>AbleScript strictly differentiates expressions and statements. Expressions cannot cause any side effects, they have value (can be used as part of expression) and they are only mathematical and logical operations or values. </p>
 <p>On the other hand, statements cause side effects and they do not have any value. AbleScript's Abstact Syntax Tree consists only from statements and expressions are used only as parts of statements. For example control structures, definitions and function calls are statements.</p>
 <p>For example</p>
-<pre><code class="language-ablescript">var abc = something() + 128;
+<pre><code class="language-ablescript">dim abc something() + 128;
 </code></pre>
 <p>is invalid, because functio call is a statement.</p>
 <pre><code class="language-ablescript">a + 3;

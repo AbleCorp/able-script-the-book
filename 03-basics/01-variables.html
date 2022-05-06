@@ -138,22 +138,22 @@
                 <div id="content" class="content">
                     <main>
                         <h2 id="variables"><a class="header" href="#variables">Variables</a></h2>
-<p>AbleScript variables can be defined using <code>var</code> keyword:</p>
-<pre><code class="language-ablescript">var variable;
+<p>AbleScript variables can be defined using <code>dim</code> keyword:</p>
+<pre><code class="language-ablescript">dim variable;
 </code></pre>
 <p>This will create an uninitialised variable, so it's value will be <code>nul</code>.</p>
 <p>For assigning value to variable, you can use:</p>
-<pre><code class="language-ablescript">variable = 42;
+<pre><code class="language-ablescript">42 =: variable;
 </code></pre>
 <p>Initial value of variable can be defined on declaration:</p>
-<pre><code class="language-ablescript">var variable = 42;
+<pre><code class="language-ablescript">dim variable 42;
 </code></pre>
 <h3 id="constants"><a class="header" href="#constants">Constants</a></h3>
 <p>Constants cannot be user defined, they are internally defined inside AbleScript interpreter (see <a href="https://git.ablecorp.us/AbleScript/able-script/src/branch/master/ablescript/src/consts.rs"><code>ablescript/src/consts.rs</code></a>)</p>
 <h3 id="banning"><a class="header" href="#banning">Banning</a></h3>
 <p>AbleScript has bannable variables, what means when variable is banned, it cannot be used and it's usage resolves into runtime error.</p>
 <p>Ban keyword was named after Rust Language Community Discord Server's owner <code>MelodicStream#1336</code> nicknamed Melo:</p>
-<pre><code class="language-ablescript">var variable = /*Hello, world!*/;
+<pre><code class="language-ablescript">dim variable /*Hello, world!*/;
 melo variable;
 variable print; owo Runtime Error
 </code></pre>

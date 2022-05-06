@@ -171,8 +171,8 @@
 <pre><code class="language-console">$ sha256sum --check sha256sums
 </code></pre>
 <p>or by just computing and then comparing it manually</p>
-<pre><code class="language-console">$ sha256sum ablescript-0.3.0-x86_64-unknown-linux-musl
-a195b1ff87a02e3669e5ace7a4f03862ac70915b8d47373ad4f6e906db4751c4  ablescript-0.3.0-x86_64-unknown-linux-musl
+<pre><code class="language-console">$ sha256sum ablescript-0.4.0-x86_64-unknown-linux-musl
+b247e87c753824946317ad52ea43ec81384087b65fb9904c2a9ec69c19b5996a  ablescript-0.4.0-x86_64-unknown-linux-musl
 </code></pre>
 <h3 id="build"><a class="header" href="#build">Build</a></h3>
 <h4 id="install-rust-toolchain"><a class="header" href="#install-rust-toolchain">Install Rust Toolchain</a></h4>
@@ -187,7 +187,7 @@ $ cargo build --release
 <h3 id="interactive"><a class="header" href="#interactive">Interactive</a></h3>
 <p>When is AbleScript run without arguments, you can interactively execute code:</p>
 <pre><code class="language-console">$ able-script
-Hi [AbleScript 0.3.0]
+Hi [AbleScript 0.4.0]
 :: 
 </code></pre>
 <p>For exiting, type <code>exit</code></p>
@@ -218,46 +218,48 @@ $ touch main.able
 <h2 id="operators"><a class="header" href="#operators">Operators</a></h2>
 <ul>
 <li>Common: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>ain't</code></li>
-<li>Comparsion: <code>&lt;</code>, <code>==</code>, <code>ain't</code> <code>&gt;</code></li>
+<li>Comparsion: <code>&lt;</code>, <code>=</code>, <code>ain't</code> <code>&gt;</code></li>
 <li>Expressions can be enclosed in parantheses</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="variables"><a class="header" href="#variables">Variables</a></h2>
-<p>AbleScript variables can be defined using <code>var</code> keyword:</p>
-<pre><code class="language-ablescript">var variable;
+<p>AbleScript variables can be defined using <code>dim</code> keyword:</p>
+<pre><code class="language-ablescript">dim variable;
 </code></pre>
 <p>This will create an uninitialised variable, so it's value will be <code>nul</code>.</p>
 <p>For assigning value to variable, you can use:</p>
-<pre><code class="language-ablescript">variable = 42;
+<pre><code class="language-ablescript">42 =: variable;
 </code></pre>
 <p>Initial value of variable can be defined on declaration:</p>
-<pre><code class="language-ablescript">var variable = 42;
+<pre><code class="language-ablescript">dim variable 42;
 </code></pre>
 <h3 id="constants"><a class="header" href="#constants">Constants</a></h3>
 <p>Constants cannot be user defined, they are internally defined inside AbleScript interpreter (see <a href="https://git.ablecorp.us/AbleScript/able-script/src/branch/master/ablescript/src/consts.rs"><code>ablescript/src/consts.rs</code></a>)</p>
 <h3 id="banning"><a class="header" href="#banning">Banning</a></h3>
 <p>AbleScript has bannable variables, what means when variable is banned, it cannot be used and it's usage resolves into runtime error.</p>
 <p>Ban keyword was named after Rust Language Community Discord Server's owner <code>MelodicStream#1336</code> nicknamed Melo:</p>
-<pre><code class="language-ablescript">var variable = /*Hello, world!*/;
+<pre><code class="language-ablescript">dim variable /*Hello, world!*/;
 melo variable;
 variable print; owo Runtime Error
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="functios"><a class="header" href="#functios">Functios</a></h2>
 <p>Functios in AbleScript can be defined using <code>functio</code> keyword, identifier, parentheses (that can optionally contain arguments) and functio body.</p>
-<pre><code class="language-ablescript">functio sayhello() {
-    /*hello!*/ print;
+<pre><code class="language-ablescript">functio sayhello ()
+{
+   /*hello!*/ print;
 }
 </code></pre>
 <p>Functio calls are statements, so they do not return any value. Luckily, all arguments are passed by reference, so you save return value by mutating them.</p>
-<pre><code class="language-ablescript">functio sum(aa, bb, return) {
-    return = aa + bb;
+<pre><code class="language-ablescript">functio sum (aa, bb, return)
+{
+   aa + bb =: return;
 }
 
-var return;
+dim return;
 sum(3, 9, return);
 </code></pre>
 <h3 id="eval"><a class="header" href="#eval">Eval</a></h3>
 <p>If you want to evaluate a value of code, simply call it:</p>
-<pre><code class="language-ablescript">var num = 4 + 2;
+<pre><code class="language-ablescript">dim num 4 + 2;
 num + /*print*/();
 </code></pre>
 <h3 id="functio-chains"><a class="header" href="#functio-chains">Functio chains</a></h3>
@@ -267,15 +269,17 @@ num + /*print*/();
 <li><code>+</code>: Equal - all arguments for chain are equally devided between left and right hand-side functions</li>
 <li><code>*</code>: By arity - all arguments are distributed for every functio in chain by its arity</li>
 </ul>
-<pre><code class="language-ablescript">functio printsum(num1, num2) {
-    num1 + num2 print;
+<pre><code class="language-ablescript">functio printsum (num1, num2)
+{
+   num1 + num2 print;
 }
 
-functio hello(name) {
-    /*Hello, */ + name + /*!*print;
+functio hello (name)
+{
+   /*Hello, */ + name + /*!*/ print;
 }
 
-var sumhello = printsum * hello;
+dim sumhello printsum * hello;
 sumhello(3, 4, /*Able*/);
 </code></pre>
 <p>Output:</p>
@@ -286,48 +290,45 @@ Hello, Able!
 <p>To decide whatever code should be runned and run code repeatedly is basic block of most programming languages. AbleScript contains <code>if</code> conditions and loop.</p>
 <h3 id="if-statements"><a class="header" href="#if-statements">If statements</a></h3>
 <p>If statement decide if code should be runned or not by a condition.</p>
-<pre><code class="language-ablescript">var num = 7;
+<pre><code class="language-ablescript">dim num 7;
 
-if (num == 7) {
-    /*Condition was met*/ print;
-}
+unless (num ain't 7)
+{ /*Condition was not met*/ print; }
 </code></pre>
 <p>If statements starts with keyword <code>if</code> followed by expression inside parantheses. If result of evaluated expression is <code>always</code>, following block of code will be run, else, it will be skipped and program execution will continue.</p>
 <p>In AbleScript, there is no else branch, so to execute code if condition isn't met, you have to negate it.</p>
-<pre><code class="language-ablescript">var num = 7;
+<pre><code class="language-ablescript">dim num 7;
 
-if (num == 7) {
-    /*Condition was met*/ print;
-}
+unless (num = 7)
+{ /*Condition wasn't met*/ print; }
 
-if (num ain't 7) {
-    /*Condition wasn't met*/ print;
-}
+unless (num ain't 7)
+{ /*Condition was met*/ print; }
 </code></pre>
 <h3 id="loop"><a class="header" href="#loop">Loop</a></h3>
 <p>Loops repeates block of code over and over again forewer until it isn't explicitly told to stop.
 For example,</p>
 <pre><code class="language-ablescript">loop {
-    /*Buy Able products!*/ print;
+   /*Buy Able products!*/ print;
 }
 </code></pre>
 <p>will infinitely repeat this piece of code.</p>
 <p>So, for stopping the loop, there exist <code>break</code> keyword.</p>
 <pre><code class="language-ablescript">var counter = 0;
 loop {
-    if (counter == 10) { break; }
-    /*Buy Able products!*/ print;
-    counter = counter + 1;
+   unless (counter ain't 10) { break; }
+   /*Buy Able products!*/ print;
+   counter + 1 =: counter;
 }
 </code></pre>
 <p>This example will stop executing the loop after 10 times writing &quot;Buy Able products!&quot; on screen.</p>
 <p>For jumping back to start of the block in the loop, there is keyword <code>hopback</code> (equivalent to <code>continue</code> in other languages.)</p>
-<pre><code class="language-ablescript">var counter = -1;
+<pre><code class="language-ablescript">dim counter -1;
 loop {
-    counter = counter + 1;
-    if (counter == 3) { hopback; }
-    if (counter == 5) { break; }
-    counter print;
+   counter + 1 =: counter;
+   unless (counter ain't 3) { hopback; }
+   unless (counter ain't 5) { break; }
+   counter print;
 }
 </code></pre>
 <p>Output:</p>
@@ -351,7 +352,7 @@ $ echo $?
 <p>AbleScript strictly differentiates expressions and statements. Expressions cannot cause any side effects, they have value (can be used as part of expression) and they are only mathematical and logical operations or values. </p>
 <p>On the other hand, statements cause side effects and they do not have any value. AbleScript's Abstact Syntax Tree consists only from statements and expressions are used only as parts of statements. For example control structures, definitions and function calls are statements.</p>
 <p>For example</p>
-<pre><code class="language-ablescript">var abc = something() + 128;
+<pre><code class="language-ablescript">dim abc something() + 128;
 </code></pre>
 <p>is invalid, because functio call is a statement.</p>
 <pre><code class="language-ablescript">a + 3;
@@ -359,22 +360,23 @@ $ echo $?
 <p>This is invalid too as expressions aren't valid AST members.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="carts"><a class="header" href="#carts">Carts</a></h1>
 <p>Carts are the only collections in AbleScript which stores key - value mappings. They are defined by typing comma-separated <code>value &lt;= key</code> associations into square brackets.</p>
-<pre><code class="language-ablescript">var cart = [
-    /*Buy Able products*/ &lt;= /*What to do?*/,
-    6 * 9 &lt;= /*answ*/ + /*er*/,
-    /*able*/ &lt;= true
+<pre><code class="language-ablescript">dim cart [
+   /*Buy Able products*/ &lt;= /*What to do?*/,
+   6 * 9 &lt;= /*answ*/ + /*er*/,
+   /*able*/ &lt;= true
 ];
 </code></pre>
 <p>To access or change values, put square square brackets behind the cart with the key.</p>
-<pre><code class="language-ablescript">cart[true] = /*Able*/;
+<pre><code class="language-ablescript">/*Able*/ =: cart[true];
 cart[/*What to do*/ + /*?*/] print;
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bf-functios"><a class="header" href="#bf-functios">BF functios</a></h1>
 <p>One of AbleScript's core functions is running BF code. Simple BF functio can be declarated using <code>bff</code> keyword:</p>
-<pre><code class="language-ablescript">bff helloworld {
-    ++++++++++[&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;
-    -]&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;++++++++++++
-    +++.&gt;.+++.------.--------.&gt;+.&gt;.
+<pre><code class="language-ablescript">bff helloworld
+{
+   ++++++++++[&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;
+   -]&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;++++++++++++
+   +++.&gt;.+++.------.--------.&gt;+.&gt;.
 }
 </code></pre>
 <p>Default tape size limit is 30 000 bytes, but that can be overriden using tape size parameter on declaration</p>
@@ -388,24 +390,24 @@ cart[/*What to do*/ + /*?*/] print;
 <p>Have you heard the Tragedy of T-Dark the Holy War Starter? He mixed up AbleLang and AbleScript and was executed for his sins.</p>
 <p>For those cases, we are introducting you <em>- dramatic pause -</em> The T-Dark Block. Simply, it replaces any occurance of substring <code>lang</code> with <code>script</code> in string literals and identifiers.</p>
 <pre><code class="language-ablescript">T-Dark {
-    var lang = /*buy able products*/;
-    script print;
+   dim lang /*buy able products*/;
+   script print;
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="keywords"><a class="header" href="#keywords">Keywords</a></h1>
 <ul>
 <li><code>bff</code> - Declaration of <a href="./04-bf-functios.html">BF functio</a></li>
 <li><code>break</code> - exit loop</li>
+<li><code>dim</code> - Declaration of <a href="./03-basics/01-variables.html">variable</a></li>
 <li><code>functio</code> - Declaration of <a href="./03-basics/02-functios.html">functios</a></li>
 <li><code>hopback</code> - jump to start of loop</li>
-<li><code>if</code> - <a href="./03-basics/03-control_flow.html">if condition</a></li>
 <li><code>loop</code> - infinite <a href="./03-basics/03-control_flow.html">loop</a></li>
 <li><code>melo</code> - Ban a variable</li>
 <li><code>print</code> - Print preceding expression to stdout</li>
 <li><code>rickroll</code> - <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link</a></li>
 <li><code>rlyeh</code> - Crash with random error code</li>
 <li><code>T-Dark</code> - T-Dark block</li>
-<li><code>var</code> - Declaration of <a href="./03-basics/01-variables.html">variable</a></li>
+<li><code>unless</code> - <a href="./03-basics/03-control_flow.html">unless condition</a></li>
 </ul>
 
                     </main>
