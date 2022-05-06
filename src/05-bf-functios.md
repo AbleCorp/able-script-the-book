@@ -1,10 +1,11 @@
 # BF functios
 One of AbleScript's core functions is running BF code. Simple BF functio can be declarated using `bff` keyword:
 ```ablescript
-bff helloworld {
-    ++++++++++[>+++++++>++++++++++>+++>+<<<<
-    -]>++.>+.+++++++..+++.>++.<<++++++++++++
-    +++.>.+++.------.--------.>+.>.
+bff helloworld
+{
+   ++++++++++[>+++++++>++++++++++>+++>+<<<<
+   -]>++.>+.+++++++..+++.>++.<<++++++++++++
+   +++.>.+++.------.--------.>+.>.
 }
 ```
 

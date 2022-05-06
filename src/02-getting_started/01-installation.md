@@ -13,8 +13,8 @@ $ sha256sum --check sha256sums
 
 or by just computing and then comparing it manually
 ```console
-$ sha256sum ablescript-0.3.0-x86_64-unknown-linux-musl
-a195b1ff87a02e3669e5ace7a4f03862ac70915b8d47373ad4f6e906db4751c4  ablescript-0.3.0-x86_64-unknown-linux-musl
+$ sha256sum ablescript-0.4.0-x86_64-unknown-linux-musl
+b247e87c753824946317ad52ea43ec81384087b65fb9904c2a9ec69c19b5996a  ablescript-0.4.0-x86_64-unknown-linux-musl
 ```
 
 ### Build
@@ -34,7 +34,7 @@ The binary will be located in `target/release/` directory. You can also use `car
 When is AbleScript run without arguments, you can interactively execute code:
 ```console
 $ able-script
-Hi [AbleScript 0.3.0]
+Hi [AbleScript 0.4.0]
 :: 
 ```
 

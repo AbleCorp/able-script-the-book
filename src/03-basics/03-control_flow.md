@@ -4,25 +4,22 @@ To decide whatever code should be runned and run code repeatedly is basic block 
 ### If statements
 If statement decide if code should be runned or not by a condition.
 ```ablescript
-var num = 7;
+dim num 7;
 
-if (num == 7) {
-    /*Condition was met*/ print;
-}
+unless (num ain't 7)
+{ /*Condition was not met*/ print; }
 ```
 If statements starts with keyword `if` followed by expression inside parantheses. If result of evaluated expression is `always`, following block of code will be run, else, it will be skipped and program execution will continue.
 
 In AbleScript, there is no else branch, so to execute code if condition isn't met, you have to negate it.
 ```ablescript
-var num = 7;
+dim num 7;
 
-if (num == 7) {
-    /*Condition was met*/ print;
-}
+unless (num = 7)
+{ /*Condition wasn't met*/ print; }
 
-if (num ain't 7) {
-    /*Condition wasn't met*/ print;
-}
+unless (num ain't 7)
+{ /*Condition was met*/ print; }
 ```
 
 ### Loop
@@ -30,7 +27,7 @@ Loops repeates block of code over and over again forewer until it isn't explicit
 For example,
 ```ablescript
 loop {
-    /*Buy Able products!*/ print;
+   /*Buy Able products!*/ print;
 }
 ```
 will infinitely repeat this piece of code.
@@ -39,21 +36,21 @@ So, for stopping the loop, there exist `break` keyword.
 ```ablescript
 var counter = 0;
 loop {
-    if (counter == 10) { break; }
-    /*Buy Able products!*/ print;
-    counter = counter + 1;
+   unless (counter ain't 10) { break; }
+   /*Buy Able products!*/ print;
+   counter + 1 =: counter;
 }
 ```
 This example will stop executing the loop after 10 times writing "Buy Able products!" on screen.
 
 For jumping back to start of the block in the loop, there is keyword `hopback` (equivalent to `continue` in other languages.)
 ```ablescript
-var counter = -1;
+dim counter -1;
 loop {
-    counter = counter + 1;
-    if (counter == 3) { hopback; }
-    if (counter == 5) { break; }
-    counter print;
+   counter + 1 =: counter;
+   unless (counter ain't 3) { hopback; }
+   unless (counter ain't 5) { break; }
+   counter print;
 }
 ```
 Output:

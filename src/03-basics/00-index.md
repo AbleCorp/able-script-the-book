@@ -17,5 +17,5 @@ Comments in AbleScript starts with `owo` and spans to end of the line
 
 ## Operators
 - Common: `+`, `-`, `*`, `/`, `ain't`
-- Comparsion: `<`, `==`, `ain't` `>`
+- Comparsion: `<`, `=`, `ain't` `>`
 - Expressions can be enclosed in parantheses

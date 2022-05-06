@@ -1,25 +1,27 @@
 ## Functios
 Functios in AbleScript can be defined using `functio` keyword, identifier, parentheses (that can optionally contain arguments) and functio body.
 ```ablescript
-functio sayhello() {
-    /*hello!*/ print;
+functio sayhello ()
+{
+   /*hello!*/ print;
 }
 ```
 
 Functio calls are statements, so they do not return any value. Luckily, all arguments are passed by reference, so you save return value by mutating them.
 ```ablescript
-functio sum(aa, bb, return) {
-    return = aa + bb;
+functio sum (aa, bb, return)
+{
+   aa + bb =: return;
 }
 
-var return;
+dim return;
 sum(3, 9, return);
 ```
 
 ### Eval
 If you want to evaluate a value of code, simply call it:
 ```ablescript
-var num = 4 + 2;
+dim num 4 + 2;
 num + /*print*/();
 ```
 
@@ -32,15 +34,17 @@ Using `+` and `*` operators, functions in AbleScript can be "chained"
 
 
 ```ablescript
-functio printsum(num1, num2) {
-    num1 + num2 print;
+functio printsum (num1, num2)
+{
+   num1 + num2 print;
 }
 
-functio hello(name) {
-    /*Hello, */ + name + /*!*print;
+functio hello (name)
+{
+   /*Hello, */ + name + /*!*/ print;
 }
 
-var sumhello = printsum * hello;
+dim sumhello printsum * hello;
 sumhello(3, 4, /*Able*/);
 ```
 
