@@ -1,17 +1,17 @@
 ## Control flow
 To decide whatever code should be runned and run code repeatedly is basic block of most programming languages. AbleScript contains `if` conditions and loop.
 
-### If statements
-If statement decide if code should be runned or not by a condition.
+### Unless statements
+Unless statement decide if code should be runned or not by a condition.
 ```ablescript
 dim num 7;
 
 unless (num ain't 7)
 { /*Condition was not met*/ print; }
 ```
-If statements starts with keyword `if` followed by expression inside parantheses. If result of evaluated expression is `always`, following block of code will be run, else, it will be skipped and program execution will continue.
+Unless statements starts with keyword `unless` followed by expression inside parantheses. If result of evaluated expression is `never`, following block of code will be run, else, it will be skipped and program execution will continue.
 
-In AbleScript, there is no else branch, so to execute code if condition isn't met, you have to negate it.
+In AbleScript, there is no else branch, so to execute code if condition is met, you have to negate it.
 ```ablescript
 dim num 7;
 
