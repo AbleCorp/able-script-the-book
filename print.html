@@ -288,15 +288,15 @@ Hello, Able!
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="control-flow"><a class="header" href="#control-flow">Control flow</a></h2>
 <p>To decide whatever code should be runned and run code repeatedly is basic block of most programming languages. AbleScript contains <code>if</code> conditions and loop.</p>
-<h3 id="if-statements"><a class="header" href="#if-statements">If statements</a></h3>
-<p>If statement decide if code should be runned or not by a condition.</p>
+<h3 id="unless-statements"><a class="header" href="#unless-statements">Unless statements</a></h3>
+<p>Unless statement decide if code should be runned or not by a condition.</p>
 <pre><code class="language-ablescript">dim num 7;
 
 unless (num ain't 7)
 { /*Condition was not met*/ print; }
 </code></pre>
-<p>If statements starts with keyword <code>if</code> followed by expression inside parantheses. If result of evaluated expression is <code>always</code>, following block of code will be run, else, it will be skipped and program execution will continue.</p>
-<p>In AbleScript, there is no else branch, so to execute code if condition isn't met, you have to negate it.</p>
+<p>Unless statements starts with keyword <code>unless</code> followed by expression inside parantheses. If result of evaluated expression is <code>never</code>, following block of code will be run, else, it will be skipped and program execution will continue.</p>
+<p>In AbleScript, there is no else branch, so to execute code if condition is met, you have to negate it.</p>
 <pre><code class="language-ablescript">dim num 7;
 
 unless (num = 7)
