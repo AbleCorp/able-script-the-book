@@ -2,6 +2,7 @@
 - `bff` - Declaration of [BF functio](./04-bf-functios.md)
 - `break` - exit loop
 - `dim` - Declaration of [variable](./03-basics/01-variables.md)
+- `finally` - [Finaliser block](./07-finalisers.md)
 - `functio` - Declaration of [functios](./03-basics/02-functios.md)
 - `hopback` - jump to start of loop
 - `loop` - infinite [loop](./03-basics/03-control_flow.md)

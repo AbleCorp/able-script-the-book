@@ -16,6 +16,6 @@ bff helloworld (1200) { ... }
 
 BF functios are called in same way as Able functios:
 ```ablescript
-helloworld();
+helloworld ();
 ```
 You can specify input data as parametre.

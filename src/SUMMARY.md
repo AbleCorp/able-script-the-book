@@ -12,4 +12,5 @@
 - [Carts](04-carts.md)
 - [BF functios](05-bf-functios.md)
 - [The Tragedy of T-Dark](06-tdark.md)
-- [Keywords](07-keywords.md)
+- [Finalisers](07-finalisers.md)
+- [Keywords](08-keywords.md)

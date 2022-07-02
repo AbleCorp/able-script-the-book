@@ -14,15 +14,17 @@ functio sum (aa, bb, return)
    aa + bb =: return;
 }
 
-dim return;
-sum(3, 9, return);
+return dim;
+sum (3, 9);
 ```
+
+See, how you do not have to pass the variable as an argument if variable already exists in the scope.
 
 ### Eval
 If you want to evaluate a value of code, simply call it:
 ```ablescript
-dim num 4 + 2;
-num + /*print*/();
+num dim 4 + 2;
+num + /*print*/ ();
 ```
 
 ### Functio chains
@@ -34,22 +36,17 @@ Using `+` and `*` operators, functions in AbleScript can be "chained"
 
 
 ```ablescript
-functio printsum (num1, num2)
-{
-   num1 + num2 print;
-}
+functio PrintA (arg)
+{ /*A: */ + arg print; }
 
-functio hello (name)
-{
-   /*Hello, */ + name + /*!*/ print;
-}
+functio PrintB (arg)
+{ /*B: */ + arg print; }
 
-dim sumhello printsum * hello;
-sumhello(3, 4, /*Able*/);
+PrintA * PrintB (4, 2);
 ```
 
 Output:
 ```
-7
-Hello, Able!
+A: 4
+B: 2
 ```

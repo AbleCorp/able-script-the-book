@@ -9,8 +9,9 @@ AbleScript is procedural, cursed, dynamically-typed, interpreted programming lan
 - Various selection of constants (including random numbers)
 
 ## Influences
-- C-language family: Syntax
+- C-languages family: Syntax
 - JavaScript: Typesystem
+- Lua: Carts
 - FORTRAN: [Expr / Statement differences](03-basics/04-exprs-vs-stmts.md)
 
 [^1]: Because float is bloat

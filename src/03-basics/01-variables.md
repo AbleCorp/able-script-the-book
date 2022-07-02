@@ -1,7 +1,7 @@
 ## Variables
 AbleScript variables can be defined using `dim` keyword:
 ```ablescript
-dim variable;
+variable dim;
 ```
 This will create an uninitialised variable, so it's value will be `nul`.
 
@@ -12,7 +12,7 @@ For assigning value to variable, you can use:
 
 Initial value of variable can be defined on declaration:
 ```ablescript
-dim variable 42;
+variable dim 42;
 ```
 
 ### Constants
@@ -23,7 +23,7 @@ AbleScript has bannable variables, what means when variable is banned, it cannot
 
 Ban keyword was named after Rust Language Community Discord Server's owner `MelodicStream#1336` nicknamed Melo:
 ```ablescript
-dim variable /*Hello, world!*/;
+variable dim /*Hello, world!*/;
 melo variable;
 variable print; owo Runtime Error
 ```

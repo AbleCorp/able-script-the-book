@@ -8,6 +8,11 @@ This chapter describes basic syntax of AbleScript
 /*check out other able products*/ print;
 ```
 
+In cases you don't want to end with new line, you can suffix print with `-`:
+```ablescript
+/*Enter your name: */ print-;
+```
+
 ## Comments
 Comments in AbleScript starts with `owo` and spans to end of the line
 

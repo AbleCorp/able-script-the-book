@@ -5,7 +5,7 @@ For those cases, we are introducting you *- dramatic pause -* The T-Dark Block. 
 
 ```ablescript
 T-Dark {
-   dim lang /*buy able products*/;
+   lang dim /*buy able products*/;
    script print;
 }
 ```

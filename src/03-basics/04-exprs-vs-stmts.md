@@ -5,7 +5,7 @@ On the other hand, statements cause side effects and they do not have any value.
 
 For example
 ```ablescript
-dim abc something() + 128;
+abc dim something() + 128;
 ```
 is invalid, because functio call is a statement.
 
