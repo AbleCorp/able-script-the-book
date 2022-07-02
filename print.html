@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-title-page.html">AbleScript</a></li><li class="chapter-item expanded "><a href="01-concepts.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded "><a href="02-getting_started/00-index.html"><strong aria-hidden="true">2.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-getting_started/01-installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="02-getting_started/02-hello_world.html"><strong aria-hidden="true">2.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><a href="03-basics/00-index.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-basics/01-variables.html"><strong aria-hidden="true">3.1.</strong> Variables</a></li><li class="chapter-item expanded "><a href="03-basics/02-functios.html"><strong aria-hidden="true">3.2.</strong> Functios</a></li><li class="chapter-item expanded "><a href="03-basics/03-control_flow.html"><strong aria-hidden="true">3.3.</strong> Control flow</a></li><li class="chapter-item expanded "><a href="03-basics/04-exprs-vs-stmts.html"><strong aria-hidden="true">3.4.</strong> Expressions vs Statements</a></li></ol></li><li class="chapter-item expanded "><a href="04-carts.html"><strong aria-hidden="true">4.</strong> Carts</a></li><li class="chapter-item expanded "><a href="05-bf-functios.html"><strong aria-hidden="true">5.</strong> BF functios</a></li><li class="chapter-item expanded "><a href="06-tdark.html"><strong aria-hidden="true">6.</strong> The Tragedy of T-Dark</a></li><li class="chapter-item expanded "><a href="07-keywords.html"><strong aria-hidden="true">7.</strong> Keywords</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-title-page.html">AbleScript</a></li><li class="chapter-item expanded "><a href="01-concepts.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded "><a href="02-getting_started/00-index.html"><strong aria-hidden="true">2.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-getting_started/01-installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="02-getting_started/02-hello_world.html"><strong aria-hidden="true">2.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><a href="03-basics/00-index.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-basics/01-variables.html"><strong aria-hidden="true">3.1.</strong> Variables</a></li><li class="chapter-item expanded "><a href="03-basics/02-functios.html"><strong aria-hidden="true">3.2.</strong> Functios</a></li><li class="chapter-item expanded "><a href="03-basics/03-control_flow.html"><strong aria-hidden="true">3.3.</strong> Control flow</a></li><li class="chapter-item expanded "><a href="03-basics/04-exprs-vs-stmts.html"><strong aria-hidden="true">3.4.</strong> Expressions vs Statements</a></li></ol></li><li class="chapter-item expanded "><a href="04-carts.html"><strong aria-hidden="true">4.</strong> Carts</a></li><li class="chapter-item expanded "><a href="05-bf-functios.html"><strong aria-hidden="true">5.</strong> BF functios</a></li><li class="chapter-item expanded "><a href="06-tdark.html"><strong aria-hidden="true">6.</strong> The Tragedy of T-Dark</a></li><li class="chapter-item expanded "><a href="07-finalisers.html"><strong aria-hidden="true">7.</strong> Finalisers</a></li><li class="chapter-item expanded "><a href="08-keywords.html"><strong aria-hidden="true">8.</strong> Keywords</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -153,8 +153,9 @@
 </ul>
 <h2 id="influences"><a class="header" href="#influences">Influences</a></h2>
 <ul>
-<li>C-language family: Syntax</li>
+<li>C-languages family: Syntax</li>
 <li>JavaScript: Typesystem</li>
+<li>Lua: Carts</li>
 <li>FORTRAN: <a href="03-basics/04-exprs-vs-stmts.html">Expr / Statement differences</a></li>
 </ul>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
@@ -171,8 +172,8 @@
 <pre><code class="language-console">$ sha256sum --check sha256sums
 </code></pre>
 <p>or by just computing and then comparing it manually</p>
-<pre><code class="language-console">$ sha256sum ablescript-0.4.0-x86_64-unknown-linux-musl
-b247e87c753824946317ad52ea43ec81384087b65fb9904c2a9ec69c19b5996a  ablescript-0.4.0-x86_64-unknown-linux-musl
+<pre><code class="language-console">$ sha256sum ablescript-0.5.0-x86_64-unknown-linux-musl
+58fc87ef7436ebfeb9956defc17182071185a2d3e6d75f441e1ba797f4e0965a  ablescript-0.5.0-x86_64-unknown-linux-musl
 </code></pre>
 <h3 id="build"><a class="header" href="#build">Build</a></h3>
 <h4 id="install-rust-toolchain"><a class="header" href="#install-rust-toolchain">Install Rust Toolchain</a></h4>
@@ -187,7 +188,7 @@ $ cargo build --release
 <h3 id="interactive"><a class="header" href="#interactive">Interactive</a></h3>
 <p>When is AbleScript run without arguments, you can interactively execute code:</p>
 <pre><code class="language-console">$ able-script
-Hi [AbleScript 0.4.0]
+Hi [AbleScript 0.5.0]
 :: 
 </code></pre>
 <p>For exiting, type <code>exit</code></p>
@@ -211,6 +212,9 @@ $ touch main.able
 <p><code>print</code> keyword prints preceding expression on stdout.</p>
 <pre><code class="language-ablescript">/*check out other able products*/ print;
 </code></pre>
+<p>In cases you don't want to end with new line, you can suffix print with <code>-</code>:</p>
+<pre><code class="language-ablescript">/*Enter your name: */ print-;
+</code></pre>
 <h2 id="comments"><a class="header" href="#comments">Comments</a></h2>
 <p>Comments in AbleScript starts with <code>owo</code> and spans to end of the line</p>
 <pre><code class="language-ablescript">/*hello*/ print; owo This will print &quot;hello&quot;
@@ -223,21 +227,21 @@ $ touch main.able
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="variables"><a class="header" href="#variables">Variables</a></h2>
 <p>AbleScript variables can be defined using <code>dim</code> keyword:</p>
-<pre><code class="language-ablescript">dim variable;
+<pre><code class="language-ablescript">variable dim;
 </code></pre>
 <p>This will create an uninitialised variable, so it's value will be <code>nul</code>.</p>
 <p>For assigning value to variable, you can use:</p>
 <pre><code class="language-ablescript">42 =: variable;
 </code></pre>
 <p>Initial value of variable can be defined on declaration:</p>
-<pre><code class="language-ablescript">dim variable 42;
+<pre><code class="language-ablescript">variable dim 42;
 </code></pre>
 <h3 id="constants"><a class="header" href="#constants">Constants</a></h3>
 <p>Constants cannot be user defined, they are internally defined inside AbleScript interpreter (see <a href="https://git.ablecorp.us/AbleScript/able-script/src/branch/master/ablescript/src/consts.rs"><code>ablescript/src/consts.rs</code></a>)</p>
 <h3 id="banning"><a class="header" href="#banning">Banning</a></h3>
 <p>AbleScript has bannable variables, what means when variable is banned, it cannot be used and it's usage resolves into runtime error.</p>
 <p>Ban keyword was named after Rust Language Community Discord Server's owner <code>MelodicStream#1336</code> nicknamed Melo:</p>
-<pre><code class="language-ablescript">dim variable /*Hello, world!*/;
+<pre><code class="language-ablescript">variable dim /*Hello, world!*/;
 melo variable;
 variable print; owo Runtime Error
 </code></pre>
@@ -254,13 +258,14 @@ variable print; owo Runtime Error
    aa + bb =: return;
 }
 
-dim return;
-sum(3, 9, return);
+return dim;
+sum (3, 9);
 </code></pre>
+<p>See, how you do not have to pass the variable as an argument if variable already exists in the scope.</p>
 <h3 id="eval"><a class="header" href="#eval">Eval</a></h3>
 <p>If you want to evaluate a value of code, simply call it:</p>
-<pre><code class="language-ablescript">dim num 4 + 2;
-num + /*print*/();
+<pre><code class="language-ablescript">num dim 4 + 2;
+num + /*print*/ ();
 </code></pre>
 <h3 id="functio-chains"><a class="header" href="#functio-chains">Functio chains</a></h3>
 <p>Using <code>+</code> and <code>*</code> operators, functions in AbleScript can be &quot;chained&quot;</p>
@@ -269,35 +274,30 @@ num + /*print*/();
 <li><code>+</code>: Equal - all arguments for chain are equally devided between left and right hand-side functions</li>
 <li><code>*</code>: By arity - all arguments are distributed for every functio in chain by its arity</li>
 </ul>
-<pre><code class="language-ablescript">functio printsum (num1, num2)
-{
-   num1 + num2 print;
-}
+<pre><code class="language-ablescript">functio PrintA (arg)
+{ /*A: */ + arg print; }
 
-functio hello (name)
-{
-   /*Hello, */ + name + /*!*/ print;
-}
+functio PrintB (arg)
+{ /*B: */ + arg print; }
 
-dim sumhello printsum * hello;
-sumhello(3, 4, /*Able*/);
+PrintA * PrintB (4, 2);
 </code></pre>
 <p>Output:</p>
-<pre><code>7
-Hello, Able!
+<pre><code>A: 4
+B: 2
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="control-flow"><a class="header" href="#control-flow">Control flow</a></h2>
 <p>To decide whatever code should be runned and run code repeatedly is basic block of most programming languages. AbleScript contains <code>if</code> conditions and loop.</p>
 <h3 id="unless-statements"><a class="header" href="#unless-statements">Unless statements</a></h3>
 <p>Unless statement decide if code should be runned or not by a condition.</p>
-<pre><code class="language-ablescript">dim num 7;
+<pre><code class="language-ablescript">num dim 7;
 
 unless (num ain't 7)
 { /*Condition was not met*/ print; }
 </code></pre>
 <p>Unless statements starts with keyword <code>unless</code> followed by expression inside parantheses. If result of evaluated expression is <code>never</code>, following block of code will be run, else, it will be skipped and program execution will continue.</p>
 <p>In AbleScript, there is no else branch, so to execute code if condition is met, you have to negate it.</p>
-<pre><code class="language-ablescript">dim num 7;
+<pre><code class="language-ablescript">num dim 7;
 
 unless (num = 7)
 { /*Condition wasn't met*/ print; }
@@ -313,21 +313,21 @@ For example,</p>
 }
 </code></pre>
 <p>will infinitely repeat this piece of code.</p>
-<p>So, for stopping the loop, there exist <code>break</code> keyword.</p>
-<pre><code class="language-ablescript">var counter = 0;
+<p>So, for stopping the loop, there is an <code>enough</code> keyword.</p>
+<pre><code class="language-ablescript">counter dim 0;
 loop {
-   unless (counter ain't 10) { break; }
+   unless (counter ain't 10) { enough; }
    /*Buy Able products!*/ print;
    counter + 1 =: counter;
 }
 </code></pre>
 <p>This example will stop executing the loop after 10 times writing &quot;Buy Able products!&quot; on screen.</p>
-<p>For jumping back to start of the block in the loop, there is keyword <code>hopback</code> (equivalent to <code>continue</code> in other languages.)</p>
-<pre><code class="language-ablescript">dim counter -1;
+<p>For jumping back to start of the block in the loop, there is a keyword <code>and again</code> (equivalent to <code>continue</code> in other languages.)</p>
+<pre><code class="language-ablescript">counter dim -1;
 loop {
    counter + 1 =: counter;
-   unless (counter ain't 3) { hopback; }
-   unless (counter ain't 5) { break; }
+   unless (counter ain't 3) { and again; }
+   unless (counter ain't 5) { enough; }
    counter print;
 }
 </code></pre>
@@ -336,6 +336,22 @@ loop {
 1
 2
 4
+</code></pre>
+<p>If either <code>enough</code> or <code>and again</code> appears in the functio called inside a loop, the effect will be performed on the loop:</p>
+<pre><code class="language-ablescript">functio ESCAPE ()
+{
+   /*Hello officer, I am escaping the loop!*/ print;
+   enough;
+}
+
+loop {
+   /*Whee!*/ print;
+   ESCAPE ();
+}
+</code></pre>
+<p>Output:</p>
+<pre><code>Whee!
+Hello officer, I am escaping the loop!
 </code></pre>
 <h3 id="rlyeh"><a class="header" href="#rlyeh">Rlyeh</a></h3>
 <p><code>rlyeh</code> keyword crashes program with some random exit code.</p>
@@ -348,11 +364,13 @@ hello
 $ echo $?
 31
 </code></pre>
+<p><em>Note:</em>
+<code>rlyeh</code> doesn't necessary exit the program. If provided <code>HostEnvironment</code> doesn't do so, interpreter will just terminate and return <code>Err(NonExitingRlyeh(code)).</code></p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="expressions-vs-statements"><a class="header" href="#expressions-vs-statements">Expressions vs Statements</a></h2>
 <p>AbleScript strictly differentiates expressions and statements. Expressions cannot cause any side effects, they have value (can be used as part of expression) and they are only mathematical and logical operations or values. </p>
 <p>On the other hand, statements cause side effects and they do not have any value. AbleScript's Abstact Syntax Tree consists only from statements and expressions are used only as parts of statements. For example control structures, definitions and function calls are statements.</p>
 <p>For example</p>
-<pre><code class="language-ablescript">dim abc something() + 128;
+<pre><code class="language-ablescript">abc dim something() + 128;
 </code></pre>
 <p>is invalid, because functio call is a statement.</p>
 <pre><code class="language-ablescript">a + 3;
@@ -360,14 +378,14 @@ $ echo $?
 <p>This is invalid too as expressions aren't valid AST members.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="carts"><a class="header" href="#carts">Carts</a></h1>
 <p>Carts are the only collections in AbleScript which stores key - value mappings. They are defined by typing comma-separated <code>value &lt;= key</code> associations into square brackets.</p>
-<pre><code class="language-ablescript">dim cart [
+<pre><code class="language-ablescript">cart dim [
    /*Buy Able products*/ &lt;= /*What to do?*/,
    6 * 9 &lt;= /*answ*/ + /*er*/,
-   /*able*/ &lt;= true
+   /*able*/ &lt;= always
 ];
 </code></pre>
 <p>To access or change values, put square square brackets behind the cart with the key.</p>
-<pre><code class="language-ablescript">/*Able*/ =: cart[true];
+<pre><code class="language-ablescript">/*Able*/ =: cart[always];
 cart[/*What to do*/ + /*?*/] print;
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bf-functios"><a class="header" href="#bf-functios">BF functios</a></h1>
@@ -383,22 +401,37 @@ cart[/*What to do*/ + /*?*/] print;
 <pre><code class="language-ablescript">bff helloworld (1200) { ... }
 </code></pre>
 <p>BF functios are called in same way as Able functios:</p>
-<pre><code class="language-ablescript">helloworld();
+<pre><code class="language-ablescript">helloworld ();
 </code></pre>
 <p>You can specify input data as parametre.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-tragedy-of-t-dark-the-holy-war-starter"><a class="header" href="#the-tragedy-of-t-dark-the-holy-war-starter">The Tragedy of T Dark the Holy War Starter</a></h1>
 <p>Have you heard the Tragedy of T-Dark the Holy War Starter? He mixed up AbleLang and AbleScript and was executed for his sins.</p>
 <p>For those cases, we are introducting you <em>- dramatic pause -</em> The T-Dark Block. Simply, it replaces any occurance of substring <code>lang</code> with <code>script</code> in string literals and identifiers.</p>
 <pre><code class="language-ablescript">T-Dark {
-   dim lang /*buy able products*/;
+   lang dim /*buy able products*/;
    script print;
 }
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="finalisers"><a class="header" href="#finalisers">Finalisers</a></h1>
+<p>If you need to run some code at the end of the program, you can use the <code>finally</code> block:</p>
+<pre><code class="language-ablescript">finally {
+    /*Goodbye!*/ print;
+}
+
+/*Hello!*/ print;
+</code></pre>
+<p>Output:</p>
+<pre><code>Hello!
+Goodbye!
+</code></pre>
+<p>This is similar to <code>defer</code> from other languages, but rather than executing at the end of the function, it executes at the end of the whole program.</p>
+<p>Finally blocks are executed in the order they were defined.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="keywords"><a class="header" href="#keywords">Keywords</a></h1>
 <ul>
 <li><code>bff</code> - Declaration of <a href="./04-bf-functios.html">BF functio</a></li>
 <li><code>break</code> - exit loop</li>
 <li><code>dim</code> - Declaration of <a href="./03-basics/01-variables.html">variable</a></li>
+<li><code>finally</code> - <a href="./07-finalisers.html">Finaliser block</a></li>
 <li><code>functio</code> - Declaration of <a href="./03-basics/02-functios.html">functios</a></li>
 <li><code>hopback</code> - jump to start of loop</li>
 <li><code>loop</code> - infinite <a href="./03-basics/03-control_flow.html">loop</a></li>

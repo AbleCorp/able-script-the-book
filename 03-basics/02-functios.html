@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../00-title-page.html">AbleScript</a></li><li class="chapter-item expanded "><a href="../01-concepts.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded "><a href="../02-getting_started/00-index.html"><strong aria-hidden="true">2.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-getting_started/01-installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../02-getting_started/02-hello_world.html"><strong aria-hidden="true">2.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><a href="../03-basics/00-index.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-basics/01-variables.html"><strong aria-hidden="true">3.1.</strong> Variables</a></li><li class="chapter-item expanded "><a href="../03-basics/02-functios.html" class="active"><strong aria-hidden="true">3.2.</strong> Functios</a></li><li class="chapter-item expanded "><a href="../03-basics/03-control_flow.html"><strong aria-hidden="true">3.3.</strong> Control flow</a></li><li class="chapter-item expanded "><a href="../03-basics/04-exprs-vs-stmts.html"><strong aria-hidden="true">3.4.</strong> Expressions vs Statements</a></li></ol></li><li class="chapter-item expanded "><a href="../04-carts.html"><strong aria-hidden="true">4.</strong> Carts</a></li><li class="chapter-item expanded "><a href="../05-bf-functios.html"><strong aria-hidden="true">5.</strong> BF functios</a></li><li class="chapter-item expanded "><a href="../06-tdark.html"><strong aria-hidden="true">6.</strong> The Tragedy of T-Dark</a></li><li class="chapter-item expanded "><a href="../07-keywords.html"><strong aria-hidden="true">7.</strong> Keywords</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../00-title-page.html">AbleScript</a></li><li class="chapter-item expanded "><a href="../01-concepts.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded "><a href="../02-getting_started/00-index.html"><strong aria-hidden="true">2.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-getting_started/01-installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../02-getting_started/02-hello_world.html"><strong aria-hidden="true">2.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><a href="../03-basics/00-index.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-basics/01-variables.html"><strong aria-hidden="true">3.1.</strong> Variables</a></li><li class="chapter-item expanded "><a href="../03-basics/02-functios.html" class="active"><strong aria-hidden="true">3.2.</strong> Functios</a></li><li class="chapter-item expanded "><a href="../03-basics/03-control_flow.html"><strong aria-hidden="true">3.3.</strong> Control flow</a></li><li class="chapter-item expanded "><a href="../03-basics/04-exprs-vs-stmts.html"><strong aria-hidden="true">3.4.</strong> Expressions vs Statements</a></li></ol></li><li class="chapter-item expanded "><a href="../04-carts.html"><strong aria-hidden="true">4.</strong> Carts</a></li><li class="chapter-item expanded "><a href="../05-bf-functios.html"><strong aria-hidden="true">5.</strong> BF functios</a></li><li class="chapter-item expanded "><a href="../06-tdark.html"><strong aria-hidden="true">6.</strong> The Tragedy of T-Dark</a></li><li class="chapter-item expanded "><a href="../07-finalisers.html"><strong aria-hidden="true">7.</strong> Finalisers</a></li><li class="chapter-item expanded "><a href="../08-keywords.html"><strong aria-hidden="true">8.</strong> Keywords</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -150,13 +150,14 @@
    aa + bb =: return;
 }
 
-dim return;
-sum(3, 9, return);
+return dim;
+sum (3, 9);
 </code></pre>
+<p>See, how you do not have to pass the variable as an argument if variable already exists in the scope.</p>
 <h3 id="eval"><a class="header" href="#eval">Eval</a></h3>
 <p>If you want to evaluate a value of code, simply call it:</p>
-<pre><code class="language-ablescript">dim num 4 + 2;
-num + /*print*/();
+<pre><code class="language-ablescript">num dim 4 + 2;
+num + /*print*/ ();
 </code></pre>
 <h3 id="functio-chains"><a class="header" href="#functio-chains">Functio chains</a></h3>
 <p>Using <code>+</code> and <code>*</code> operators, functions in AbleScript can be &quot;chained&quot;</p>
@@ -165,22 +166,17 @@ num + /*print*/();
 <li><code>+</code>: Equal - all arguments for chain are equally devided between left and right hand-side functions</li>
 <li><code>*</code>: By arity - all arguments are distributed for every functio in chain by its arity</li>
 </ul>
-<pre><code class="language-ablescript">functio printsum (num1, num2)
-{
-   num1 + num2 print;
-}
+<pre><code class="language-ablescript">functio PrintA (arg)
+{ /*A: */ + arg print; }
 
-functio hello (name)
-{
-   /*Hello, */ + name + /*!*/ print;
-}
+functio PrintB (arg)
+{ /*B: */ + arg print; }
 
-dim sumhello printsum * hello;
-sumhello(3, 4, /*Able*/);
+PrintA * PrintB (4, 2);
 </code></pre>
 <p>Output:</p>
-<pre><code>7
-Hello, Able!
+<pre><code>A: 4
+B: 2
 </code></pre>
 
                     </main>

@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Concepts - AbleScript</title>
+        <title>Finalisers - AbleScript</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-title-page.html">AbleScript</a></li><li class="chapter-item expanded "><a href="01-concepts.html" class="active"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded "><a href="02-getting_started/00-index.html"><strong aria-hidden="true">2.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-getting_started/01-installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="02-getting_started/02-hello_world.html"><strong aria-hidden="true">2.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><a href="03-basics/00-index.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-basics/01-variables.html"><strong aria-hidden="true">3.1.</strong> Variables</a></li><li class="chapter-item expanded "><a href="03-basics/02-functios.html"><strong aria-hidden="true">3.2.</strong> Functios</a></li><li class="chapter-item expanded "><a href="03-basics/03-control_flow.html"><strong aria-hidden="true">3.3.</strong> Control flow</a></li><li class="chapter-item expanded "><a href="03-basics/04-exprs-vs-stmts.html"><strong aria-hidden="true">3.4.</strong> Expressions vs Statements</a></li></ol></li><li class="chapter-item expanded "><a href="04-carts.html"><strong aria-hidden="true">4.</strong> Carts</a></li><li class="chapter-item expanded "><a href="05-bf-functios.html"><strong aria-hidden="true">5.</strong> BF functios</a></li><li class="chapter-item expanded "><a href="06-tdark.html"><strong aria-hidden="true">6.</strong> The Tragedy of T-Dark</a></li><li class="chapter-item expanded "><a href="07-finalisers.html"><strong aria-hidden="true">7.</strong> Finalisers</a></li><li class="chapter-item expanded "><a href="08-keywords.html"><strong aria-hidden="true">8.</strong> Keywords</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="00-title-page.html">AbleScript</a></li><li class="chapter-item expanded "><a href="01-concepts.html"><strong aria-hidden="true">1.</strong> Concepts</a></li><li class="chapter-item expanded "><a href="02-getting_started/00-index.html"><strong aria-hidden="true">2.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="02-getting_started/01-installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="02-getting_started/02-hello_world.html"><strong aria-hidden="true">2.2.</strong> Hello, world!</a></li></ol></li><li class="chapter-item expanded "><a href="03-basics/00-index.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="03-basics/01-variables.html"><strong aria-hidden="true">3.1.</strong> Variables</a></li><li class="chapter-item expanded "><a href="03-basics/02-functios.html"><strong aria-hidden="true">3.2.</strong> Functios</a></li><li class="chapter-item expanded "><a href="03-basics/03-control_flow.html"><strong aria-hidden="true">3.3.</strong> Control flow</a></li><li class="chapter-item expanded "><a href="03-basics/04-exprs-vs-stmts.html"><strong aria-hidden="true">3.4.</strong> Expressions vs Statements</a></li></ol></li><li class="chapter-item expanded "><a href="04-carts.html"><strong aria-hidden="true">4.</strong> Carts</a></li><li class="chapter-item expanded "><a href="05-bf-functios.html"><strong aria-hidden="true">5.</strong> BF functios</a></li><li class="chapter-item expanded "><a href="06-tdark.html"><strong aria-hidden="true">6.</strong> The Tragedy of T-Dark</a></li><li class="chapter-item expanded "><a href="07-finalisers.html" class="active"><strong aria-hidden="true">7.</strong> Finalisers</a></li><li class="chapter-item expanded "><a href="08-keywords.html"><strong aria-hidden="true">8.</strong> Keywords</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -137,35 +137,29 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="concepts"><a class="header" href="#concepts">Concepts</a></h1>
-<p>AbleScript is procedural, cursed, dynamically-typed, interpreted programming language, designed to be bad.</p>
-<h2 id="key-features"><a class="header" href="#key-features">Key Features</a></h2>
-<ul>
-<li>BF functions</li>
-<li>No floats<sup class="footnote-reference"><a href="#1">1</a></sup></li>
-<li><code>'U'</code> is equal to <code>-210</code></li>
-<li>Bannable variables</li>
-<li>Various selection of constants (including random numbers)</li>
-</ul>
-<h2 id="influences"><a class="header" href="#influences">Influences</a></h2>
-<ul>
-<li>C-languages family: Syntax</li>
-<li>JavaScript: Typesystem</li>
-<li>Lua: Carts</li>
-<li>FORTRAN: <a href="03-basics/04-exprs-vs-stmts.html">Expr / Statement differences</a></li>
-</ul>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>Because float is bloat</p>
-</div>
+                        <h1 id="finalisers"><a class="header" href="#finalisers">Finalisers</a></h1>
+<p>If you need to run some code at the end of the program, you can use the <code>finally</code> block:</p>
+<pre><code class="language-ablescript">finally {
+    /*Goodbye!*/ print;
+}
+
+/*Hello!*/ print;
+</code></pre>
+<p>Output:</p>
+<pre><code>Hello!
+Goodbye!
+</code></pre>
+<p>This is similar to <code>defer</code> from other languages, but rather than executing at the end of the function, it executes at the end of the whole program.</p>
+<p>Finally blocks are executed in the order they were defined.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="00-title-page.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="06-tdark.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="02-getting_started/00-index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="08-keywords.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -174,10 +168,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="00-title-page.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="06-tdark.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="02-getting_started/00-index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="08-keywords.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
