@@ -165,29 +165,33 @@
 <p>This chapter will show you how to download and compile AbleScript and how to write and run a simple &quot;Hello, world!&quot; program.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
 <p>To use AbleScript, you can download binary from AbleScript's repository (only x86_64 Linux) or build it yourself.</p>
+<h3 id="arch-user-repository"><a class="header" href="#arch-user-repository">Arch User Repository</a></h3>
+<p>You can build and install AbleScript from AUR: <a href="https://aur.archlinux.org/packages/ablescript">https://aur.archlinux.org/packages/ablescript</a></p>
+<pre><code class="language-console">&gt; paru -S ablescript
+</code></pre>
 <h3 id="binaries"><a class="header" href="#binaries">Binaries</a></h3>
 <p>You can download pre-build binaries from <a href="https://git.ablecorp.us/AbleScript/able-script/releases">here</a>.</p>
 <p>Binaries are built for target <code>x86_64-unknown-linux-musl</code>.</p>
 <p>You can verify binary's integrity by downloading <code>sha256sums</code> file and running:</p>
-<pre><code class="language-console">$ sha256sum --check sha256sums
+<pre><code class="language-console">&gt; sha256sum --check sha256sums
 </code></pre>
 <p>or by just computing and then comparing it manually</p>
-<pre><code class="language-console">$ sha256sum ablescript-0.5.0-x86_64-unknown-linux-musl
-58fc87ef7436ebfeb9956defc17182071185a2d3e6d75f441e1ba797f4e0965a  ablescript-0.5.0-x86_64-unknown-linux-musl
+<pre><code class="language-console">&gt; sha256sum ablescript-0.5.2-x86_64-unknown-linux-musl
+7de28be2a50ace314ad32539eb2558bf4d4cea3c0fa172932e53de4a45400504  ablescript-0.5.2-x86_64-unknown-linux-musl
 </code></pre>
 <h3 id="build"><a class="header" href="#build">Build</a></h3>
 <h4 id="install-rust-toolchain"><a class="header" href="#install-rust-toolchain">Install Rust Toolchain</a></h4>
 <p>First of all, you have to have Rust toolchain. It can be installed using <a href="https://rustup.rs">Rustup</a>.</p>
 <h4 id="build-ablescript"><a class="header" href="#build-ablescript">Build AbleScript</a></h4>
 <p>First of all we need to get AbleScript sources and build it:</p>
-<pre><code class="language-console">$ git clone https://git.ablecorp.us/AbleScript/able-script.git
-$ cd able-script
-$ cargo build --release
+<pre><code class="language-console">&gt; git clone https://git.ablecorp.us/AbleScript/able-script.git
+&gt; cd able-script
+&gt; cargo build --release
 </code></pre>
 <p>The binary will be located in <code>target/release/</code> directory. You can also use <code>cargo run --release</code> to build and run it directly.</p>
-<h3 id="interactive"><a class="header" href="#interactive">Interactive</a></h3>
+<h2 id="interactive"><a class="header" href="#interactive">Interactive</a></h2>
 <p>When is AbleScript run without arguments, you can interactively execute code:</p>
-<pre><code class="language-console">$ able-script
+<pre><code class="language-console">&gt; able-script
 Hi [AbleScript 0.5.0]
 :: 
 </code></pre>
